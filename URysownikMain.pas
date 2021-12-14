@@ -178,7 +178,7 @@ begin
         MoveTo(xp, yp);
         LineTo(X, Y);
         MoveTo(X, Y);
-        LineTo(xp, Y);
+        LineTo(2*xp-x, Y);
         //MoveTo(xp,y);
         //LineTo(xp, yp)
       end;
