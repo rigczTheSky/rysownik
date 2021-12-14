@@ -89,8 +89,6 @@ begin
   Pen.Width:=UpDown1.Position;
   Pen.Color:=Panel1.Color;
 
-
-
   MoveTo(x,y);
   xp:=x;
   yp:=y;
@@ -105,7 +103,7 @@ begin
  with Image1.Canvas do
  if rys then
  begin
-
+ Memo1.Clear;
  Memo1.Lines.Add('Wspó³rzêdna x:'+ intToStr(x)+', wspó³rzêdna y: '+intToStr(y));
 
    if RadioGroup2.ItemIndex=0 then
@@ -147,16 +145,24 @@ begin
     begin
       // czesc - na razie wyglada na bezuzyteczna
 
-      { if RadioGroup2.ItemIndex=0 then
-        begin
-        MoveTo(xp,yp);
-        LineTo(xt,yt);
-        end
-        else
-        if RadioGroup2.ItemIndex=1 then
-        Ellipse(xp,yp,xt,yt)
-        else
-        Rectangle(xp,yp,xt,yt); }
+      if RadioGroup2.ItemIndex = 0 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(xt, yt);
+      end
+      else if RadioGroup2.ItemIndex = 1 then
+        Ellipse(xp, yp, xt, yt)
+      else if RadioGroup2.ItemIndex = 2 then
+        Rectangle(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+        MoveTo(X, Y);
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
+      end;
 
       Pen.Mode := pmCopy;
       if RadioGroup1.ItemIndex = 0 then
@@ -181,9 +187,9 @@ begin
         MoveTo(xp, yp);
         LineTo(X, Y);
         MoveTo(X, Y);
-        LineTo(xp, Y);
-        MoveTo(xp,y);
-        LineTo(xp, yp)
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
       end;
     end;
     rys := false;

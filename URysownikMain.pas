@@ -116,7 +116,17 @@ begin
         Ellipse(xp,yp,xt,yt)
        else
        if RadioGroup2.ItemIndex=2 then
-         Rectangle(xp,yp,xt,yt);
+         Rectangle(xp,yp,xt,yt)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(xt, yt);
+        MoveTo(xt, yt);
+        LineTo(2 * xp - xt, yt);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - xt, yt)
+      end;
+
 
     if RadioGroup2.ItemIndex=0 then
     begin
@@ -128,9 +138,19 @@ begin
         Ellipse(xp,yp,x,y)
        else
        if RadioGroup2.ItemIndex=2 then
-        Rectangle(xp,yp,x,y);
+        Rectangle(xp,yp,x,y)
+          else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+        MoveTo(X, Y);
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
+      end;
     xt:=x;
     yt:=y;
+
  end;
 
 end;
@@ -144,16 +164,24 @@ begin
     begin
       // czesc - na razie wyglada na bezuzyteczna
 
-      { if RadioGroup2.ItemIndex=0 then
-        begin
-        MoveTo(xp,yp);
-        LineTo(xt,yt);
-        end
-        else
-        if RadioGroup2.ItemIndex=1 then
-        Ellipse(xp,yp,xt,yt)
-        else
-        Rectangle(xp,yp,xt,yt); }
+      if RadioGroup2.ItemIndex = 0 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(xt, yt);
+      end
+      else if RadioGroup2.ItemIndex = 1 then
+        Ellipse(xp, yp, xt, yt)
+      else if RadioGroup2.ItemIndex = 2 then
+        Rectangle(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(xt, yt);
+        MoveTo(xt, yt);
+        LineTo(2 * xp - xt, yt);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - xt, yt)
+      end;
 
       Pen.Mode := pmCopy;
       if RadioGroup1.ItemIndex = 0 then
@@ -178,9 +206,9 @@ begin
         MoveTo(xp, yp);
         LineTo(X, Y);
         MoveTo(X, Y);
-        LineTo(2*xp-x, Y);
-        MoveTo(xp,yp);
-        LineTo(2*xp-x, Y)
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
       end;
     end;
     rys := false;

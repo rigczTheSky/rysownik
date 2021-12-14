@@ -89,8 +89,6 @@ begin
   Pen.Width:=UpDown1.Position;
   Pen.Color:=Panel1.Color;
 
-
-
   MoveTo(x,y);
   xp:=x;
   yp:=y;
@@ -105,6 +103,8 @@ begin
  with Image1.Canvas do
  if rys then
  begin
+ Memo1.Clear;
+ Memo1.Lines.Add('Wspó³rzêdna x:'+ intToStr(x)+', wspó³rzêdna y: '+intToStr(y));
 
    if RadioGroup2.ItemIndex=0 then
     begin
@@ -117,7 +117,6 @@ begin
        else
        if RadioGroup2.ItemIndex=2 then
          Rectangle(xp,yp,xt,yt);
-
 
     if RadioGroup2.ItemIndex=0 then
     begin
@@ -139,57 +138,53 @@ end;
 procedure TForm1.Image1MouseUp(Sender: TObject; Button: TMouseButton;
   Shift: TShiftState; X, Y: Integer);
 begin
- if rys then
- begin
+  if rys then
+  begin
     with Image1.Canvas do
     begin
-    //czesc - na razie wyglada na bezuzyteczna
+      // czesc - na razie wyglada na bezuzyteczna
 
-    {if RadioGroup2.ItemIndex=0 then
-      begin
-       MoveTo(xp,yp);
-       LineTo(xt,yt);
-      end
-       else
+      { if RadioGroup2.ItemIndex=0 then
+        begin
+        MoveTo(xp,yp);
+        LineTo(xt,yt);
+        end
+        else
         if RadioGroup2.ItemIndex=1 then
-          Ellipse(xp,yp,xt,yt)
-         else
-           Rectangle(xp,yp,xt,yt);}
+        Ellipse(xp,yp,xt,yt)
+        else
+        Rectangle(xp,yp,xt,yt); }
 
-      Pen.Mode:=pmCopy;
-      if RadioGroup1.ItemIndex=0 then
-       Pen.Style:=pssolid
+      Pen.Mode := pmCopy;
+      if RadioGroup1.ItemIndex = 0 then
+        Pen.Style := pssolid
+      else if RadioGroup1.ItemIndex = 1 then
+        Pen.Style := psdot
       else
-       if RadioGroup1.ItemIndex=1 then
-        Pen.Style:=psdot
-       else
-        Pen.Style:=psdash;
+        Pen.Style := psdash;
 
-        //czesc od rysowania
-      if RadioGroup2.ItemIndex=0 then
+      // czesc od rysowania
+      if RadioGroup2.ItemIndex = 0 then
       begin
-       MoveTo(xp,yp);
-       LineTo(x,y);
+        MoveTo(xp, yp);
+        LineTo(X, Y);
       end
-       else
-        if RadioGroup2.ItemIndex=1 then
-          Ellipse(xp,yp,x,y)
-         else
-         if RadioGroup2.ItemIndex=2 then
-         Rectangle(xp,yp,x,y)
-         else
-         if RadioGroup2.ItemIndex=3 then
-         begin
-            MoveTo(xp,yp);
-            LineTo(x,y);
-           MoveTo(x,y);
-           LineTo(xp,y);
-           //MoveTo(150,80);
-           //LineTo(xp, yp)
-         end;
+      else if RadioGroup2.ItemIndex = 1 then
+        Ellipse(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 2 then
+        Rectangle(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+        MoveTo(X, Y);
+        LineTo(2*xp-x, Y);
+        MoveTo(xp,yp);
+        LineTo(2*xp-x, Y)
+      end;
     end;
-    rys:=false;
- end;
+    rys := false;
+  end;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

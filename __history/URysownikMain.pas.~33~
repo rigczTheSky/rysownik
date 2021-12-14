@@ -106,29 +106,43 @@ begin
  Memo1.Clear;
  Memo1.Lines.Add('Wspó³rzêdna x:'+ intToStr(x)+', wspó³rzêdna y: '+intToStr(y));
 
-   if RadioGroup2.ItemIndex=0 then
-    begin
-     MoveTo(xp,yp);
-     LineTo(xt,yt);
-    end
-     else
-      if RadioGroup2.ItemIndex=1 then
-        Ellipse(xp,yp,xt,yt)
-       else
-       if RadioGroup2.ItemIndex=2 then
-         Rectangle(xp,yp,xt,yt);
+if RadioGroup2.ItemIndex = 0 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+      end
+      else if RadioGroup2.ItemIndex = 1 then
+        Ellipse(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 2 then
+        Rectangle(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+        MoveTo(X, Y);
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
+      end;
 
-    if RadioGroup2.ItemIndex=0 then
-    begin
-     MoveTo(xp,yp);
-     LineTo(x,y);
-    end
-     else
-      if RadioGroup2.ItemIndex=1 then
-        Ellipse(xp,yp,x,y)
-       else
-       if RadioGroup2.ItemIndex=2 then
-        Rectangle(xp,yp,x,y);
+if RadioGroup2.ItemIndex = 0 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+      end
+      else if RadioGroup2.ItemIndex = 1 then
+        Ellipse(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 2 then
+        Rectangle(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+        MoveTo(X, Y);
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
+      end;
     xt:=x;
     yt:=y;
  end;
@@ -144,16 +158,24 @@ begin
     begin
       // czesc - na razie wyglada na bezuzyteczna
 
-      { if RadioGroup2.ItemIndex=0 then
-        begin
-        MoveTo(xp,yp);
-        LineTo(xt,yt);
-        end
-        else
-        if RadioGroup2.ItemIndex=1 then
-        Ellipse(xp,yp,xt,yt)
-        else
-        Rectangle(xp,yp,xt,yt); }
+      if RadioGroup2.ItemIndex = 0 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(xt, yt);
+      end
+      else if RadioGroup2.ItemIndex = 1 then
+        Ellipse(xp, yp, xt, yt)
+      else if RadioGroup2.ItemIndex = 2 then
+        Rectangle(xp, yp, X, Y)
+      else if RadioGroup2.ItemIndex = 3 then
+      begin
+        MoveTo(xp, yp);
+        LineTo(X, Y);
+        MoveTo(X, Y);
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
+      end;
 
       Pen.Mode := pmCopy;
       if RadioGroup1.ItemIndex = 0 then
@@ -178,9 +200,9 @@ begin
         MoveTo(xp, yp);
         LineTo(X, Y);
         MoveTo(X, Y);
-        LineTo(2*xp-x, Y);
-        //MoveTo(xp,y);
-        //LineTo(xp, yp)
+        LineTo(2 * xp - X, Y);
+        MoveTo(xp, yp);
+        LineTo(2 * xp - X, Y)
       end;
     end;
     rys := false;
