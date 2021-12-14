@@ -179,8 +179,8 @@ begin
         LineTo(X, Y);
         MoveTo(X, Y);
         LineTo(2*xp-x, Y);
-        //MoveTo(xp,y);
-        //LineTo(xp, yp)
+        MoveTo(xp,yp);
+        LineTo(2*xp-x, Y)
       end;
     end;
     rys := false;
