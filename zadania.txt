@@ -1,0 +1,6 @@
+1. zapis do pliku
+2. poprawki w rysowaniu (styl kropkowany, grubosc linii)
+3. ustalenie polozenia tekstu (x,y)
+4. dodanie rysowania trojkata rownoramiennego
+(5.) zmiana rozmiarow obrazka
+(6.) dodanie rysowania gwiazdy

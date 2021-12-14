@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899-12-30 00:00:00.000.048,D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\Unit3.pas=C:\Users\zdzichs\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.677,=C:\Users\zdzichs\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.168,D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\DemoRysownik.dproj=C:\Users\zdzichs\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.632,D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\URysownikMain.dfm=D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\Unit1.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.160,=D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.632,D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\URysownikMain.pas=D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\Unit1.pas</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.048,D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\Unit3.dfm=C:\Users\zdzichs\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
+    <Transaction>1899-12-30 00:00:00.000.822,D:\zsdir\zsdane\programs\DelphiSydney\akademia\kod\rysownik\Unit3.pas=</Transaction>
+  </Transactions>
+</BorlandProject>
